@@ -1,0 +1,214 @@
+:root {
+  --bg: #F5F7F6;
+  --panel: #FFFFFF;
+  --teal: #088f7b;
+  --teal-dark: #16544A; 
+  --mustard: #E3A857;
+  --ink: #23282B;
+  --muted: #6B7472;
+  --line: #E1E7E4;
+  --Back : #000000;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Jua", sans-serif;
+  line-height: 1.7;
+}
+
+.page {
+  max-width: 760px;
+  margin: 40px auto;
+  background: var(--panel);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* 헤더 영역 */
+.profile-header {
+  background: var(--teal);
+  color: #fff;
+  padding: 40px 40px 32px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.profile-header h1 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 2rem;
+  margin: 0 0 6px;
+}
+
+.profile-header .tagline {
+  margin: 0;
+  color: #DCEFEA;
+  font-size: 0.95rem;
+}
+
+.profile-photo img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.5);
+  flex-shrink: 0;
+}
+
+/* 본문 공통 */
+section, footer.contact {
+  padding: 32px 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+footer.contact { border-bottom: none; background: #FAFBFA; }
+
+h2 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.15rem;
+  color: var(--teal-dark);
+  margin: 0 0 14px;
+}
+
+h3 {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 18px 0 10px;
+}
+
+h3:first-of-type { margin-top: 0; }
+
+section p {
+  margin: 0 0 10px;
+  max-width: 62ch;
+  color: var(--ink);
+}
+
+section p:last-child { margin-bottom: 0; }
+
+/* 좌우명 인용구 */
+blockquote.motto {
+  margin: 16px 0 0;
+  padding: 10px 18px;
+  border-left: 3px solid var(--mustard);
+  color: var(--muted);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+/* 태그형 리스트 (관심 분야, 보유 기술) */
+.interests ul,
+.skills ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.interests li {
+  background: #EAF3F1;
+  color: var(--teal-dark);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.skills li {
+  background: #FBF3E7;
+  color: #8A5E23;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+/* 표 공통 (학력사항, 프로젝트, 자격증) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+th {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+tbody tr:hover { background: #F7FAF9; }
+
+/* 연락처 */
+.contact ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contact li a {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid var(--teal);
+  border-radius: 999px;
+  color: var(--teal-dark);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.contact li a:hover {
+  background: var(--mustard);
+  border-color: var(--mustard);
+  color: #fff;
+}
+
+@media (max-width: 500px) {
+  .page { 
+    margin: 0; 
+    border-radius: 0; 
+  }
+  .profile-header { 
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 16px; 
+    padding: 28px 24px; 
+  }
+  section, footer.contact { 
+    padding: 24px; 
+  }
+  table, thead, tbody, th, td, tr { 
+    display: block; 
+  }
+  thead { 
+    display: none; 
+  }
+  td { 
+    border-bottom: none; 
+    padding: 4px 0; 
+  }
+  tbody tr { 
+    padding: 10px 0; 
+    border-bottom: 1px solid var(--line); 
+  }
+  td::before { 
+    content: attr(data-label); 
+    display: block; 
+    font-size: 0.75rem; 
+    color: var(--muted); 
+  }
+}
+  
