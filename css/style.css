@@ -61,7 +61,7 @@ body {
   border-radius: 50%;
   border: 3px solid rgba(255,255,255,0.5);
   flex-shrink: 0;
-  object-position: center;
+  object-position: center 38%; /* 사진의 위치 조정 */
 }
 
 /* 본문 공통 */
@@ -154,6 +154,7 @@ th {
 tbody tr:hover { background: #e9eae9; }
 
 /* 연락처 */
+/* .은 클래스, #은 ID | 클래스는 동시에 여러개가 있을 수 있고, ID는 하나만 있어야 함. */
 .contact ul {
   list-style: none;
   margin: 0;
@@ -180,6 +181,7 @@ tbody tr:hover { background: #e9eae9; }
   color: #fff;
 }
 
+/* 모바일 화면 조정 */
 @media (max-width: 500px) {
   .page { 
     margin: 0; 
@@ -195,7 +197,7 @@ tbody tr:hover { background: #e9eae9; }
     padding: 24px; 
   }
   table, thead, tbody, th, td, tr { 
-    /*display: block;*/ 
+    display: block;
   }
   thead { 
     display: none; 
@@ -206,8 +208,9 @@ tbody tr:hover { background: #e9eae9; }
   }
   tbody tr { 
     padding: 10px 0; 
-    border-bottom: 1px solid var(--line); 
+    border-bottom: 1px solid var(--line);
   }
+  /* 모바일 화면에서 숨겨진 표 제목 대신 각 셀 데이터 위에 가짜 제목을 생성 */
   td::before { 
     content: attr(data-label); 
     display: block; 
