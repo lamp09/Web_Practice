@@ -1,6 +1,6 @@
 :root {
-  --bg: #F5F7F6;
-  --panel: #FFFFFF;
+  --bg: #ff7777;
+  --panel: #ffffff;
   --teal: #088f7b;
   --teal-dark: #16544A; 
   --mustard: #E3A857;
@@ -14,7 +14,10 @@
 
 body {
   margin: 0;
-  background: var(--bg);
+  background: linear-gradient(135deg, #ff9a9e 10%, #fecfef 60%, #a1c4fd 100%);
+  min-height: 100dvh;
+  background-attachment: fixed;
+
   color: var(--ink);
   font-family: "Jua", sans-serif;
   line-height: 1.7;
@@ -58,6 +61,7 @@ body {
   border-radius: 50%;
   border: 3px solid rgba(255,255,255,0.5);
   flex-shrink: 0;
+  object-position: center;
 }
 
 /* 본문 공통 */
@@ -147,7 +151,7 @@ th {
   font-weight: 500;
 }
 
-tbody tr:hover { background: #F7FAF9; }
+tbody tr:hover { background: #e9eae9; }
 
 /* 연락처 */
 .contact ul {
@@ -191,7 +195,7 @@ tbody tr:hover { background: #F7FAF9; }
     padding: 24px; 
   }
   table, thead, tbody, th, td, tr { 
-    display: block; 
+    /*display: block;*/ 
   }
   thead { 
     display: none; 
